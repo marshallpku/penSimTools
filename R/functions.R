@@ -6,6 +6,8 @@
 #   http://www.pzhao.org/zh/post/rmickey/#comment-3314475182
 #   https://cosx.org/2013/11/building-r-packages-easily
 #
+#   Roxygen2 doc: https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html
+
 # 2. Some useful keyboard shortcuts for package authoring:
 #
 #   Build and Reload Package:  'Ctrl + Shift + B'
@@ -37,10 +39,11 @@
 #   devtools:document(): updating function documents and namespace
 
 
-#**************************************
-#    1. PV of Annuities           #####
-#**************************************
 
+# Import fequently used functions (Note must end with NULL)
+# (usually placed in zzz.R in ./R)
+#' @importFrom magrittr %>%
+NULL
 
 
 
@@ -51,7 +54,6 @@
 #' The length of px is f - a1
 #' Note that the last element is redundant, just used as a place holder.
 #'
-#' @import magrittr
 #' @param px an vector of composite survivial probs from age x to x + n - 1. Length = n
 #' @param i  discount rate, scalar
 #' @param scale  how the annuity scale up over time. eg:
@@ -111,6 +113,7 @@ create_returns <- function(r.mean, r.sd, period){
 "mtcars"
 
 
+# documenting data
 #' Prices of 50,000 round cut diamonds.
 #'
 #' A dataset containing the prices and other attributes of almost 54,000
