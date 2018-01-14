@@ -37,11 +37,12 @@
 #   devtools:document(): updating function documents and namespace
 
 
-
-
 #**************************************
 #    1. PV of Annuities           #####
 #**************************************
+
+
+
 
 #' Function calculating temporary annuity values from age x to retirment age (fixed end)
 #'
@@ -50,7 +51,7 @@
 #' The length of px is f - a1
 #' Note that the last element is redundant, just used as a place holder.
 #'
-#'
+#' @import magrittr
 #' @param px an vector of composite survivial probs from age x to x + n - 1. Length = n
 #' @param i  discount rate, scalar
 #' @param scale  how the annuity scale up over time. eg:

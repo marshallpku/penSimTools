@@ -2,3 +2,4 @@
 
 export(create_returns)
 export(get_tla)
+import(magrittr)
