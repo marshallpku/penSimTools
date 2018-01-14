@@ -30,7 +30,7 @@
 #
 #
 # To-do:
-# - namespace
+# - namespace https://stackoverflow.com/questions/27947344/r-use-magrittr-pipe-operator-in-self-written-package
 # - use with rcpp
 #
 # Misc notes
