@@ -17,8 +17,26 @@
 #  a. rtools
 #  b. install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
 #
-# 4. load tools
-# library(devtools)
+#
+# 4. package dependencies http://r-pkgs.had.co.nz/description.html
+#
+#  Use other packages in self-writen packages
+#  	 devtools::use_package("dplyr") # add external packages to Imports in DESCRIPTION
+#    devtools::use_package("magrittr")
+#
+#
+# 5. adding data http://r-pkgs.had.co.nz/data.html
+#   see example in ./data-raw/data.R
+#
+#
+# To-do:
+# - namespace
+# - use with rcpp
+#
+# Misc notes
+#   devtools:document(): updating function documents and namespace
+
+
 
 
 #**************************************
@@ -45,7 +63,6 @@
 #' @examples
 get_tla <- function(px, i, scale = rep(1, length(px))){
 
-
 	tla <- numeric(length(px))
 	n <- length(tla)
 
@@ -57,3 +74,39 @@ get_tla <- function(px, i, scale = rep(1, length(px))){
 	}
 	return(tla)
 }
+
+
+#' Create return series
+#'
+#' Create return series with time varying mean, sd.
+#'
+#' @param r.mean arith mean
+#' @param r.sd   standard deviation
+#' @param period length of each period
+#'
+#' @return A series of investment returns
+#' @export
+#'
+#' @examples
+create_returns <- function(r.mean, r.sd, period){
+	i.r <- unlist(mapply(rnorm, period, r.mean, r.sd)) %>% as.vector # when the length of the arguments is 1, need to convert the reusult to vector from a matrix
+}
+
+
+
+
+#' Prices of 50,000 round cut diamonds.
+#'
+#' A dataset containing the prices and other attributes of almost 54,000
+#' diamonds.
+#'
+#' @format A data frame with 53940 rows and 10 variables:
+#' \describe{
+#'   \item{price}{price, in US dollars}
+#'   \item{carat}{weight of the diamond, in carats}
+#'   ...
+#' }
+#' @source \url{http://www.diamondse.info/}
+"mtcars"
+
+
